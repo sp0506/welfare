@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+  <cron>
+    <url>/choose/sendMail</url>
+    <description>Send Email Everyday</description>
+     <schedule>every day 00:00</schedule> 
+      <timezone>Asia/Kolkata</timezone>
+<!--  <schedule> every 1 hours</schedule> -->
+  </cron>
+</cronentries> 

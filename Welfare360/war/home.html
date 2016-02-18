@@ -1,0 +1,988 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Welfare 360</title>
+   
+   
+    <link href="./assets/css/bootstrap.css" rel="stylesheet">
+    <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      padding-bottom: 40px;
+      color: #fff;
+      background-color: #5a5a5a;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #5a5a5a;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+        .carousel-caption .lead1 {
+	      margin: 0;
+	      line-height: 1.25;
+	       color: #5a5a5a;
+
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+ h2, #myModalLabel {
+
+  font-size: 17.5px;
+  font-weight: bold;
+line-height: 20px;
+color: #358cce;
+ }
+.modal-body ,.form{
+ 
+  color: #358cce;
+}
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+
+    .featurette-image {
+
+        max-width: 30%;
+        max-width:30%;
+        min-width: 30%;
+        min-width:30%;
+
+    }
+
+.modal-footer {   border-top: 0px; }
+body { margin-top:30px; }
+#login-nav input { margin-bottom: 15px; }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="./assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+
+
+    <!-- NAVBAR
+    ================================================== -->
+   <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">Welfare 360</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+                <li class="active"><a href="./index.html">Home</a></li>
+                <li><a href="./Charity_Organizations.html">Charity Organizations</a></li>
+                <li><a href="./Volunteers.html">Volunteers</a></li>
+                <li><a  href="#NeedHelp"  data-toggle="modal">Looking For Help</a></li>
+
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#OurBileaf">Our Belief</a></li>
+                    <li><a href="#">Our Vision</a></li>
+                    <li><a href="#">Welfare 360 Team</a></li>
+                  </ul>
+                </li>
+
+
+            </ul>
+
+ <ul class="nav navbar-nav navbar-right">
+                 
+                  <li class="dropdown">
+                     <a href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
+                     <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                        <li>
+
+                                 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                    <div class="form-group">
+                                       <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                       <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                    </div>
+                                    <div class="form-group">
+                                       <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                       <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                    </div>
+                                    <div class="checkbox">
+                                       <label>
+                                       <input type="checkbox"> Remember me
+                                       </label>
+                                    </div>
+                                    <div class="form-group">
+                                       <button type="submit" class="btn btn-success btn-block">Sign in</button>
+                                    </div>
+                                 </form>
+
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                           <input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with Google">
+                           <input class="btn btn-primary btn-block" type="button" id="sign-in-twitter" value="Sign In with Twitter">
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="./assets/img/examples/slide-01.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Let us Help you to Help others.</h1>
+              <div class="lead1">We try to make the the life of charity and social wefare organisations seemless by standing besides them through their complete lifecycle.</div>
+              <a  href="#AddVolunteer" role="button" class="btn  btn-large btn-primary" data-toggle="modal">Sign up to Volunteer</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="./assets/img/examples/slide-02.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Share Practice with Other Organizations.</h1>
+              <div class="lead1">Share the best practices, ideas, funds, volunteer's help with 130 + Charitable Organizations registered with 'Weldare 360'.</div>
+              <a class="btn btn-large btn-primary" href="./Charity_Organizations.html">Share Practice</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="./assets/img/examples/slide-03.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Meet other Volunteers.</h1>
+              <div class="lead1">Meet 1000 + Volunteers and share your views on different organizations and help us build a better world.</div>
+              <a class="btn btn-large btn-primary" href="/Volunteers.html">Meet Volunteers</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div><!-- /.carousel -->
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span4">
+          <img class="img-circle" src="./assets/img/charity_org.jpg">
+          <h2></h2> <p><a href="#AddOrganization" role="button" class="btn btn-primary" data-toggle="modal">Register Charity Organization</a></p>
+          <p>We try to make the the life of charity and social wefare organisations seemless by standing besides them therough their complete lifecycle.</p>
+
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" src="./assets/img/volunteers.jpg">
+          <h2></h2>       <p><a  href="#AddVolunteer" role="button" class="btn btn-primary" data-toggle="modal">Volunteer</a></p>
+          <p>Join 1000 + Voluteers and open your helping hands to make a better world.</p>
+
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" src="./assets/img/needhelp.jpg">
+          <h2></h2> <p><a  href="#NeedHelp" role="button" class="btn btn-primary" data-toggle="modal">Need Help</a></p>
+          <p>Please rise your voice and let us know, how we can help you.</p>
+
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+                  <!-- Modal -->
+                  <div id="AddOrganization" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <h3 id="myModalLabel">Charity Organization Registration Form</h3>
+                    </div>
+                    <div class="modal-body">
+                                <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                   
+
+                                  <!-- Text input-->
+                                  <div class="control-group">
+                                    <label class="control-label" for="textinput">Organization Name</label>
+                                    <div class="controls">
+                                      <input id="textinput" name="textinput" type="text" placeholder="Organization Name" class="input-xlarge" required="">
+                                      
+                                    </div>
+                                  </div>
+
+                                  <!-- Text input-->
+                                  <div class="control-group">
+                                    <label class="control-label" for="textinput">Organization Location</label>
+                                    <div class="controls">
+                                      <input id="textinput" name="textinput" type="text" placeholder="City,State,Country" class="input-xlarge" required="">
+                                      
+                                    </div>
+                                  </div>
+
+                                  <!-- File Button --> 
+                                  <div class="control-group">
+                                    <label class="control-label" for="Organization Logo">Organization Logo</label>
+                                    <div class="controls">
+                                      <input id="Organization Logo" name="Organization Logo" class="input-file" type="file">
+                                    </div>
+                                  </div>
+
+                                  <!-- Text input-->
+                                  <div class="control-group">
+                                    <label class="control-label" for="textinput">Organization Admin Email</label>
+                                    <div class="controls">
+                                      <input id="textinput" name="textinput" type="text" placeholder="saiprasad@gietrjay.com" class="input-xlarge" required="">
+                                      <p class="help-block">This will be the admin login name</p>
+                                    </div>
+                                  </div>
+
+                                  <!-- Text input-->
+                                  <div class="control-group">
+                                    <label class="control-label" for="textinput">Organization Website</label>
+                                    <div class="controls">
+                                      <input id="textinput" name="textinput" type="text" placeholder="wwww.organisation.org" class="input-xlarge">
+                                      
+                                    </div>
+                                  </div>
+
+                                  <!-- Password input-->
+                                  <div class="control-group">
+                                    <label class="control-label" for="passwordinput">Password</label>
+                                    <div class="controls">
+                                      <input id="passwordinput" name="passwordinput" type="password" placeholder="placeholder" class="input-xlarge" required="">
+                                      <p class="help-block">Please make a note of this</p>
+                                    </div>
+                                  </div>
+
+                                  <!-- Textarea -->
+                                  <div class="control-group">
+                                    <label class="control-label" for="textarea">Organization Vision</label>
+                                    <div class="controls">                     
+                                      <textarea id="textarea" name="textarea">Please Describe the Vision of your Organization here</textarea>
+                                    </div>
+                                  </div>
+
+                                  <!-- Multiple Checkboxes -->
+                                  <div class="control-group">
+                                    <label class="control-label" for="checkboxes">Social Activities</label>
+                                    <div class="controls">
+                                      <label class="checkbox" for="checkboxes-0">
+                                        <input type="checkbox" name="checkboxes" id="checkboxes-0" value="Education">
+                                        Education
+                                      </label>
+                                      <label class="checkbox" for="checkboxes-1">
+                                        <input type="checkbox" name="checkboxes" id="checkboxes-1" value="Health Support">
+                                        Health Support
+                                      </label>
+                                      <label class="checkbox" for="checkboxes-2">
+                                        <input type="checkbox" name="checkboxes" id="checkboxes-2" value="Animal Welfare">
+                                        Animal Welfare
+                                      </label>
+                                      <label class="checkbox" for="checkboxes-3">
+                                        <input type="checkbox" name="checkboxes" id="checkboxes-3" value="Natural Disaster Support">
+                                        Natural Disaster Support
+                                      </label>
+                                      <label class="checkbox" for="checkboxes-4">
+                                        <input type="checkbox" name="checkboxes" id="checkboxes-4" value="Food and Hygiene">
+                                        Food and Hygiene
+                                      </label>
+                                      <label class="checkbox" for="checkboxes-5">
+                                        <input type="checkbox" name="checkboxes" id="checkboxes-5" value="Shelter and Clothing">
+                                        Shelter and Clothing
+                                      </label>
+                                      <label class="checkbox" for="checkboxes-6">
+                                        <input type="checkbox" name="checkboxes" id="checkboxes-6" value="Scholarships">
+                                        Scholarships
+                                      </label>
+                                      <label class="checkbox" for="checkboxes-7">
+                                        <input type="checkbox" name="checkboxes" id="checkboxes-7" value="Women welfare">
+                                        Women welfare
+                                      </label>
+                                      <label class="checkbox" for="checkboxes-8">
+                                        <input type="checkbox" name="checkboxes" id="checkboxes-8" value="Rural Development">
+                                        Rural Development
+                                      </label>
+                                      <label class="checkbox" for="checkboxes-9">
+                                        <input type="checkbox" name="checkboxes" id="checkboxes-9" value="Agriculture Support">
+                                        Agriculture Support
+                                      </label>
+                                      <label class="checkbox" for="checkboxes-10">
+                                        <input type="checkbox" name="checkboxes" id="checkboxes-10" value="Others">
+                                        Others
+                                      </label>
+                                    </div>
+                                  </div>
+
+                                  <!-- Multiple Checkboxes -->
+                                  <div class="control-group">
+                                    <label class="control-label" for="checkboxes"></label>
+                                    <div class="controls">
+                                      <label class="checkbox" for="checkboxes-0">
+                                        <input type="checkbox" name="checkboxes" id="checkboxes-0" value="I Agree to the Welfare 360 Terms and conditions">
+                                        I Agree to the Welfare 360 Terms and conditions
+                                      </label>
+                                    </div>
+                                  </div>
+
+                                  <!-- Button (Double) -->
+                                  <div class="control-group">
+                                    <label class="control-label" for="button1id"></label>
+                                    <div class="controls">
+                                      <button id="button1id" name="button1id" class="btn btn-success">Submit</button>
+                                      <button id="button2id" name="button2id" class="btn btn-danger">Cancel</button>
+                                    </div>
+                                  </div>
+                                 </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                     
+                    </div>
+                  </div>
+
+
+
+                         <!-- Modal -->
+                  <div id="AddVolunteer" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <h3 id="myModalLabel">Volunteer Registration Form</h3>
+                    </div>
+                    <div class="modal-body">
+                                <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                   
+
+                                <div class="control-group">
+  <label class="control-label" for="textinput">Volunteer Name</label>
+  <div class="controls">
+    <input id="textinput" name="textinput" type="text" placeholder="Volunteer Name" class="input-xlarge" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="textinput">Volunteer Location</label>
+  <div class="controls">
+    <input id="textinput" name="textinput" type="text" placeholder="City,State,Country" class="input-xlarge" required="">
+    
+  </div>
+</div>
+
+<!-- File Button --> 
+<div class="control-group">
+  <label class="control-label" for="Volunteer Photo">Volunteer Photo</label>
+  <div class="controls">
+    <input id="Volunteer Photo" name="Volunteer Photo" class="input-file" type="file">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="textinput">Volunteer Email</label>
+  <div class="controls">
+    <input id="textinput" name="textinput" type="text" placeholder="sravya@gietrjy.com" class="input-xlarge" required="">
+    <p class="help-block">This will be the user name for the Volunteer</p>
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="control-group">
+  <label class="control-label" for="passwordinput">Password</label>
+  <div class="controls">
+    <input id="passwordinput" name="passwordinput" type="password" placeholder="placeholder" class="input-xlarge" required="">
+    <p class="help-block">Please make a note of this</p>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="textinput">Volunteer Website</label>
+  <div class="controls">
+    <input id="textinput" name="textinput" type="text" placeholder="wwww.Volunteername.org" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="control-group">
+  <label class="control-label" for="textarea">Volunteer Vision</label>
+  <div class="controls">                     
+    <textarea id="textarea" name="textarea">Volunteer breaf description goes here.</textarea>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes (inline) -->
+<div class="control-group">
+  <label class="control-label" for="checkboxes">Want to Contribute in terms of</label>
+  <div class="controls">
+    <label class="checkbox inline" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="Time">
+      Time
+    </label>
+    <label class="checkbox inline" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="Money">
+      Money
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes -->
+<div class="control-group">
+  <label class="control-label" for="checkboxes">Want to Volunteer for</label>
+  <div class="controls">
+    <label class="checkbox" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="Education">
+      Education
+    </label>
+    <label class="checkbox" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="Health Support">
+      Health Support
+    </label>
+    <label class="checkbox" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="Animal Welfare">
+      Animal Welfare
+    </label>
+    <label class="checkbox" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="Natural Disaster Support">
+      Natural Disaster Support
+    </label>
+    <label class="checkbox" for="checkboxes-4">
+      <input type="checkbox" name="checkboxes" id="checkboxes-4" value="Food and Hygiene">
+      Food and Hygiene
+    </label>
+    <label class="checkbox" for="checkboxes-5">
+      <input type="checkbox" name="checkboxes" id="checkboxes-5" value="Shelter and Clothing">
+      Shelter and Clothing
+    </label>
+    <label class="checkbox" for="checkboxes-6">
+      <input type="checkbox" name="checkboxes" id="checkboxes-6" value="Scholarships">
+      Scholarships
+    </label>
+    <label class="checkbox" for="checkboxes-7">
+      <input type="checkbox" name="checkboxes" id="checkboxes-7" value="Women welfare">
+      Women welfare
+    </label>
+    <label class="checkbox" for="checkboxes-8">
+      <input type="checkbox" name="checkboxes" id="checkboxes-8" value="Rural Development">
+      Rural Development
+    </label>
+    <label class="checkbox" for="checkboxes-9">
+      <input type="checkbox" name="checkboxes" id="checkboxes-9" value="Agriculture Support">
+      Agriculture Support
+    </label>
+    <label class="checkbox" for="checkboxes-10">
+      <input type="checkbox" name="checkboxes" id="checkboxes-10" value="Others">
+      Others
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes -->
+<div class="control-group">
+  <label class="control-label" for="checkboxes">Volunteer Activities</label>
+  <div class="controls">
+    <label class="checkbox" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="Audit for Charity Organizations">
+      Audit for Charity Organizations
+    </label>
+    <label class="checkbox" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="IT Support for Charity Organizations">
+      IT Support for Charity Organizations
+    </label>
+    <label class="checkbox" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="Manage Charity Projects">
+      Manage Charity Projects
+    </label>
+    <label class="checkbox" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="Teaching and Related">
+      Teaching and Related
+    </label>
+    <label class="checkbox" for="checkboxes-4">
+      <input type="checkbox" name="checkboxes" id="checkboxes-4" value="Prepare Documentation">
+      Prepare Documentation
+    </label>
+    <label class="checkbox" for="checkboxes-5">
+      <input type="checkbox" name="checkboxes" id="checkboxes-5" value="Cooking food">
+      Cooking food
+    </label>
+    <label class="checkbox" for="checkboxes-6">
+      <input type="checkbox" name="checkboxes" id="checkboxes-6" value="Organizing Travel">
+      Organizing Travel
+    </label>
+    <label class="checkbox" for="checkboxes-7">
+      <input type="checkbox" name="checkboxes" id="checkboxes-7" value="Construction">
+      Construction
+    </label>
+    <label class="checkbox" for="checkboxes-8">
+      <input type="checkbox" name="checkboxes" id="checkboxes-8" value="Others(Please specify in below text box)">
+      Others(Please specify in below text box)
+    </label>
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="control-group">
+  <label class="control-label" for="passwordinput"></label>
+  <div class="controls">
+    <input id="passwordinput" name="passwordinput" type="password" placeholder="Other Categories" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Multiple Checkboxes -->
+<div class="control-group">
+  <label class="control-label" for="checkboxes"></label>
+  <div class="controls">
+    <label class="checkbox" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="I Agree to the Welfare 360 Terms and conditions">
+      I Agree to the Welfare 360 Terms and conditions
+    </label>
+  </div>
+</div>
+
+<!-- Button (Double) -->
+<div class="control-group">
+  <label class="control-label" for="button1id"></label>
+  <div class="controls">
+    <button id="button1id" name="button1id" class="btn btn-success">Submit</button>
+    <button id="button2id" name="button2id" class="btn btn-danger">Cancel</button>
+  </div>
+</div>
+                                 </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                     
+                    </div>
+                  </div>
+
+
+
+
+
+
+                         <!-- Modal -->
+                  <div id="NeedHelp" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <h3 id="myModalLabel">Register to Ask for Help</h3>
+                    </div>
+                    <div class="modal-body">
+                                <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                   
+
+                                <div class="control-group">
+                                    <label class="control-label" for="textinput">Name</label>
+                                    <div class="controls">
+                                      <input id="textinput" name="textinput" type="text" placeholder="First Name, Last Name" class="input-xlarge" required="">
+                                      
+                                    </div>
+                                  </div>
+
+                                  <!-- Text input-->
+                                  <div class="control-group">
+                                    <label class="control-label" for="textinput">Location</label>
+                                    <div class="controls">
+                                      <input id="textinput" name="textinput" type="text" placeholder="City,State,Country" class="input-xlarge" required="">
+                                      
+                                    </div>
+                                  </div>
+
+                                  <!-- File Button --> 
+                                  <div class="control-group">
+                                    <label class="control-label" for="Volunteer Photo">Photo</label>
+                                    <div class="controls">
+                                      <input id="Volunteer Photo" name="Volunteer Photo" class="input-file" type="file">
+                                    </div>
+                                  </div>
+
+                                  <!-- Text input-->
+                                  <div class="control-group">
+                                    <label class="control-label" for="textinput">Email</label>
+                                    <div class="controls">
+                                      <input id="textinput" name="textinput" type="text" placeholder="sravya@gietrjy.com" class="input-xlarge" required="">
+                                      <p class="help-block">This will be the user name </p>
+                                    </div>
+                                  </div>
+
+                                  <!-- Password input-->
+                                  <div class="control-group">
+                                    <label class="control-label" for="passwordinput">Password</label>
+                                    <div class="controls">
+                                      <input id="passwordinput" name="passwordinput" type="password" placeholder="placeholder" class="input-xlarge" required="">
+                                      <p class="help-block">Please make a note of this</p>
+                                    </div>
+                                  </div>
+
+
+                                  <!-- Textarea -->
+                                  <div class="control-group">
+                                    <label class="control-label" for="textarea">Help Request</label>
+                                    <div class="controls">                     
+                                      <textarea id="textarea" name="textarea">Please describe how we can help you.</textarea>
+                                    </div>
+                                  </div>
+
+
+                                  <!-- Multiple Checkboxes -->
+                                  <div class="control-group">
+                                    <label class="control-label" for="checkboxes"></label>
+                                    <div class="controls">
+                                      <label class="checkbox" for="checkboxes-0">
+                                        <input type="checkbox" name="checkboxes" id="checkboxes-0" value="I Agree to the Welfare 360 Terms and conditions">
+                                        I Agree to the Welfare 360 Terms and conditions
+                                      </label>
+                                    </div>
+                                  </div>
+
+                                  <!-- Button (Double) -->
+                                  <div class="control-group">
+                                    <label class="control-label" for="button1id"></label>
+                                    <div class="controls">
+                                      <button id="button1id" name="button1id" class="btn btn-success">Submit</button>
+                                      <button id="button2id" name="button2id" class="btn btn-danger">Cancel</button>
+                                    </div>
+                                  </div>
+                                 </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                     
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+
+      <!-- START THE FEATURETTES -->
+      <a id="OurBileaf"></a>
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-right" src="./assets/img/examples/browser-icon-chrome.png">
+        <h2 class="featurette-heading">Our Belief </h2>
+        <p class="lead">No matter what the social/ charitable organizations names and locations are, they are all build to help the mankind and show humanity. We Believe there is no bigger cause than standing by the side of these organizations and helping them in every walk.</p>
+      </div>
+      <a id="OurVision"></a>
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-left" src="./assets/img/examples/browser-icon-firefox.png">
+        <h2 class="featurette-heading">Our Vision</h2>
+        <p class="lead">Our vision is to bring more and more "Transparent" Social Organizations that can help the needful. We are committed to make that happen with help our Information Technology expertise. </p>
+      </div>
+      <a id="Welfare360Team"></a>
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-right" src="./assets/img/examples/browser-icon-safari.png">
+        <h2 class="featurette-heading">Welfare 360 Team. </h2>
+        <p class="lead">We are enthusiastic stuents currently studing 3rd Year at GIET ,Rajahumndry.<BR><BR>
+        Team Members<BR> <BR>Sravya , Sai Prasad , Haritha</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2014 Welfare 360. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/bootstrap-transition.js"></script>
+    <script src="./assets/js/bootstrap-alert.js"></script>
+    <script src="./assets/js/bootstrap-modal.js"></script>
+    <script src="./assets/js/bootstrap-dropdown.js"></script>
+    <script src="./assets/js/bootstrap-scrollspy.js"></script>
+    <script src="./assets/js/bootstrap-tab.js"></script>
+    <script src="./assets/js/bootstrap-tooltip.js"></script>
+    <script src="./assets/js/bootstrap-popover.js"></script>
+    <script src="./assets/js/bootstrap-button.js"></script>
+    <script src="./assets/js/bootstrap-collapse.js"></script>
+    <script src="./assets/js/bootstrap-carousel.js"></script>
+    <script src="./assets/js/bootstrap-typeahead.js"></script>
+    <script src="./assets/js/bootstrap-multiselect.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+    <script src="./assets/js/holder/holder.js"></script>
+  </body>
+</html>
